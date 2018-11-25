@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ElaApi.Models;
+using ElaApi.Repositories;
 
 namespace ElaApi
 {
@@ -32,6 +34,9 @@ namespace ElaApi
                     options.ConnectionString = Configuration.GetSection("MongoDb:ConnectionString").Value;
                     options.Database = Configuration.GetSection("MongoDb:Database").Value;
                 });
+
+            services.AddTransient<IMemberContext, MemberContext>();
+            services.AddTransient<IMemberRepository, MemberRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
