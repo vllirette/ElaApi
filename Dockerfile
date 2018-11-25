@@ -16,4 +16,5 @@ RUN dotnet publish -c Release -o out
 FROM microsoft/dotnet:aspnetcore-runtime
 WORKDIR /app
 COPY --from=build /app/out .
+EXPOSE 80
 ENTRYPOINT ["dotnet", "ElaApi.dll"]
