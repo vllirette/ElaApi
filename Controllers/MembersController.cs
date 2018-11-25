@@ -24,7 +24,7 @@ namespace ElaApi.Controllers
         }
 
         //GET: api/members/discordid
-        [HttpGet("discordid", Name = "Get")]
+        [HttpGet("{discordid}", Name = "Get")]
         public async Task<IActionResult> Get(string discordid)
         {
             var member = await _memberRepository.GetMember(discordid);
