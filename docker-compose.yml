@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  ela_api:
+    #build: .
+    image: elaapi
+    container_name: ela-api
+    environment:
+      VIRTUAL_HOST: api.vllirette.com
+      ASPNETCORE_ENVIRONMENT: Development
+    networks:
+      - nginxproxy
+      - mongodb
+    ports:
+      - 8082:80
+
+networks:
+  nginxproxy:
+    external:
+      name: nginxproxy
+  mongodb:
+    external:
+      name: mongodb
