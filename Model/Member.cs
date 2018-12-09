@@ -11,6 +11,8 @@ namespace ElaApi.Model
 
         public string DiscordId { get; set; }
 
+        public string TwitchId { get; set; }
+
         public int TotalPoints { get; set; }
 
         public int CurrentPoints { get; set; }

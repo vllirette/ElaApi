@@ -32,6 +32,7 @@ namespace ElaApi.Infrastructure
             var member1 = new Member()
             {
                 DiscordId = "12345",
+                TwitchId = "ABCDEF",
                 TotalPoints = 0,
                 CurrentPoints = 0
             };
@@ -40,6 +41,7 @@ namespace ElaApi.Infrastructure
             var member2= new Member()
             {
                 DiscordId = "67890",
+                TwitchId = "GHIJKL",
                 TotalPoints = 0,
                 CurrentPoints = 0
             };
