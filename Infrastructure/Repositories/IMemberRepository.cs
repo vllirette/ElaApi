@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ElaApi.Models;
+using ElaApi.Model;
 
 namespace ElaApi.Infrastructure.Repositories
 {

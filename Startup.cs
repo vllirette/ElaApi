@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
-using ElaApi.Models;
+using ElaApi.Model;
 using ElaApi.Infrastructure.Repositories;
 using ElaApi.Infrastructure.Services;
 using ElaApi.Infrastructure;

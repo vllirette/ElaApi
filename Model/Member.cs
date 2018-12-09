@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace ElaApi.Models
+namespace ElaApi.Model
 {
     public class Member
     {

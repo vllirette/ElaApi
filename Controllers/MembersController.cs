@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ElaApi.Models;
+using ElaApi.Model;
 using ElaApi.Infrastructure.Repositories;
 using ElaApi.Infrastructure.Services;
 

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ElaApi.Models;
+using ElaApi.Model;
 using ElaApi.Infrastructure.Repositories;
 
 namespace ElaApi.Infrastructure.Services

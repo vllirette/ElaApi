@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
-using ElaApi.Models;
+using ElaApi.Model;
 using MongoDB.Driver;
 
 namespace ElaApi.Infrastructure

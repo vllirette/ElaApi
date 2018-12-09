@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using ElaApi.Models;
+using ElaApi.Model;
 using Microsoft.Extensions.Options;
 
 namespace ElaApi.Infrastructure.Repositories

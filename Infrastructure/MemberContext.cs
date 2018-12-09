@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using ElaApi.Models;
+using ElaApi.Model;
 
 namespace ElaApi.Infrastructure
 {
