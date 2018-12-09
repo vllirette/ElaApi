@@ -14,6 +14,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using ElaApi.Models;
 using ElaApi.Infrastructure.Repositories;
 using ElaApi.Infrastructure.Services;
+using ElaApi.Infrastructure;
 
 namespace ElaApi
 {
@@ -71,6 +72,9 @@ namespace ElaApi
                 c.RoutePrefix = string.Empty;
 
             });
+
+            MemberContextSeed.SeedAsync(app).Wait();
+
             app.UseMvc();
         }
     }

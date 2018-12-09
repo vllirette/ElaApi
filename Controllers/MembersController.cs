@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ElaApi.Models;
 using ElaApi.Infrastructure.Repositories;
+using ElaApi.Infrastructure.Services;
 
 namespace ElaApi.Controllers
 {
@@ -9,25 +10,25 @@ namespace ElaApi.Controllers
     [Route("api/[controller]")]
     public class MembersController : Controller
     {
-        private readonly IMemberRepository _memberRepository;
+        private readonly IMemberService _memberService;
 
-        public MembersController(IMemberRepository memberRepository)
+        public MembersController(IMemberService memberService)
         {
-            _memberRepository = memberRepository;
+            _memberService = memberService;
         }
 
         //GET: api/members
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return new ObjectResult(await _memberRepository.GetAllMembers());
+            return new ObjectResult(await _memberService.GetAllMembers());
         }
 
         //GET: api/members/discordid
         [HttpGet("{discordid}", Name = "Get")]
         public async Task<IActionResult> Get(string discordid)
         {
-            var member = await _memberRepository.GetMemberByDiscordId(discordid);
+            var member = await _memberService.GetMemberByDiscordId(discordid);
 
             if (member == null)
                 return new NotFoundResult();

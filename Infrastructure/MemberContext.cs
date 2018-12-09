@@ -1,7 +1,8 @@
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using ElaApi.Models;
 
-namespace ElaApi.Models
+namespace ElaApi.Infrastructure
 {
     public class MemberContext
     {

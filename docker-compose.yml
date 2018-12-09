@@ -2,7 +2,7 @@ version: '3'
 
 services:
   ela_api:
-    #build: .
+    build: .
     image: elaapi
     container_name: ela-api
     environment:

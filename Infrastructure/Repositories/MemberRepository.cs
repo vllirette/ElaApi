@@ -1,8 +1,11 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using ElaApi.Models;
+using Microsoft.Extensions.Options;
 
 namespace ElaApi.Infrastructure.Repositories
 {
@@ -10,12 +13,12 @@ namespace ElaApi.Infrastructure.Repositories
     {
         private readonly MemberContext _context;
 
-        public MemberRepository(MemberContext context)
+        public MemberRepository(IOptions<Settings> options)
         {
-            _context = context;
+            _context = new MemberContext(options);
         }
 
-        public async Task<List<Member>> GetAllMembers()
+        public async Task<List<Member>> GetMembersListAsync()
         {
             return await _context.Members.Find(new BsonDocument()).ToListAsync();
         }

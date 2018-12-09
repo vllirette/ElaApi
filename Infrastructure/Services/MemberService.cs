@@ -27,7 +27,7 @@ namespace ElaApi.Infrastructure.Services
 
         public async Task<List<Member>> GetAllMembers()
         {
-            return await _memberRepository.GetAllMembers();
+            return await _memberRepository.GetMembersListAsync();
         }
 
         public async Task<Member> GetMemberByDiscordId(string discordId)
