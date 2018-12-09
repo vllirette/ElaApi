@@ -3,7 +3,7 @@ using MongoDB.Driver;
 
 namespace ElaApi.Models
 {
-    public class MemberContext : IMemberContext
+    public class MemberContext
     {
         private readonly IMongoDatabase _db;
 

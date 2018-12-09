@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ElaApi.Models;
-using ElaApi.Repositories;
+using ElaApi.Infrastructure.Repositories;
 
 namespace ElaApi.Controllers
 {
@@ -27,7 +27,7 @@ namespace ElaApi.Controllers
         [HttpGet("{discordid}", Name = "Get")]
         public async Task<IActionResult> Get(string discordid)
         {
-            var member = await _memberRepository.GetMember(discordid);
+            var member = await _memberRepository.GetMemberByDiscordId(discordid);
 
             if (member == null)
                 return new NotFoundResult();

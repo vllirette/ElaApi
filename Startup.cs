@@ -12,7 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 using ElaApi.Models;
-using ElaApi.Repositories;
+using ElaApi.Infrastructure.Repositories;
+using ElaApi.Infrastructure.Services;
 
 namespace ElaApi
 {
@@ -36,14 +37,13 @@ namespace ElaApi
                     options.Database = Configuration.GetSection("MongoDb:Database").Value;
                 });
 
-            services.AddTransient<IMemberContext, MemberContext>();
-            services.AddTransient<IMemberRepository, MemberRepository>();
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "ElaAPI", Version = "v1" });
             });
 
+            services.AddTransient<IMemberService, MemberService>();
+            services.AddTransient<IMemberRepository, MemberRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
