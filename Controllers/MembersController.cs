@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ElaApi.Model;
@@ -50,7 +51,7 @@ namespace ElaApi.Controllers
             var memberFromDb = await _memberService.GetMemberByDiscordId(discordid);
             if (memberFromDb == null)
                 return new NotFoundResult();
-            member.DiscordId = memberFromDb.DiscordId;
+            member.Id = memberFromDb.Id;
             await _memberService.UpdateMember(member);
             return new OkObjectResult(member);
         }
