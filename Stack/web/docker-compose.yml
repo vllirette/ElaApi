@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  welcome-page:
+    container_name: welcome-page
+    restart: always
+    build: .
+    environment:
+      VIRTUAL_HOST: vllirette.com
+    networks:
+      - nginxproxy
+
+networks:
+  nginxproxy:
+    external:
+      name: nginxproxy
