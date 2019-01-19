@@ -34,7 +34,8 @@ namespace ElaApi.Infrastructure
                 DiscordId = "12345",
                 TwitchId = "ABCDEF",
                 TotalPoints = 0,
-                CurrentPoints = 0
+                CurrentPoints = 0,
+                ActivityMeter = 100000
             };
             memberList.Add(member1);
 
@@ -43,7 +44,8 @@ namespace ElaApi.Infrastructure
                 DiscordId = "67890",
                 TwitchId = "GHIJKL",
                 TotalPoints = 0,
-                CurrentPoints = 0
+                CurrentPoints = 0,
+                ActivityMeter = 0
             };
             memberList.Add(member2);
 

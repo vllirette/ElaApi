@@ -34,5 +34,25 @@ namespace ElaApi.Controllers
                 return new NotFoundResult();
             return new ObjectResult(member);
         }
+
+        // POST: api/members
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody]Member member)
+        {
+            await _memberService.CreateMember(member);
+            return new OkObjectResult(member);
+        }
+
+        // PUT: api/members/discordid
+        [HttpPut("{discordid}")]
+        public async Task<IActionResult> Put(string discordid, [FromBody]Member member)
+        {
+            var memberFromDb = await _memberService.GetMemberByDiscordId(discordid);
+            if (memberFromDb == null)
+                return new NotFoundResult();
+            member.DiscordId = memberFromDb.DiscordId;
+            await _memberService.UpdateMember(member);
+            return new OkObjectResult(member);
+        }
     }
 }

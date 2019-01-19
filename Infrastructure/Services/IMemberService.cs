@@ -13,5 +13,7 @@ namespace ElaApi.Infrastructure.Services
         Task CreateMember(Member member);
 
         Task<bool> DeleteMember(string id);
+
+        Task<bool> UpdateMember(Member member);
     }    
 }

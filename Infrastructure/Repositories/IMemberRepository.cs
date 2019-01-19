@@ -10,5 +10,9 @@ namespace ElaApi.Infrastructure.Repositories
 
         Task<Member> GetMemberByDiscordId(string DiscordId);
 
+        Task CreateMember (Member member); 
+
+        Task<bool> UpdateMemberAsync(Member member);
+
     }
 }

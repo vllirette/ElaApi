@@ -28,5 +28,16 @@ namespace ElaApi.Infrastructure.Repositories
             FilterDefinition<Member> filter = Builders<Member>.Filter.Eq(m => m.DiscordId, DiscordId);
             return await _context.Members.Find(filter).FirstOrDefaultAsync();
         }
+
+        public async Task<bool> UpdateMemberAsync(Member member)
+        {
+            ReplaceOneResult updateResult = await _context.Members.ReplaceOneAsync(filter: m => m.Id == member.Id, replacement: member);
+            return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
+        }
+
+        public async Task CreateMember(Member member)
+        {
+            await _context.Members.InsertOneAsync(member);
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace ElaApi.Infrastructure.Services
 
         public async Task CreateMember(Member member)
         {
-            throw new System.NotImplementedException();
+            await _memberRepository.CreateMember(member);
         }
 
         public async Task<bool> DeleteMember(string id)
@@ -33,6 +33,11 @@ namespace ElaApi.Infrastructure.Services
         public async Task<Member> GetMemberByDiscordId(string discordId)
         {
             return await _memberRepository.GetMemberByDiscordId(discordId);
+        }
+
+        public async Task<bool> UpdateMember(Member member)
+        {
+            return await _memberRepository.UpdateMemberAsync(member);
         }
     }
 }

@@ -16,5 +16,7 @@ namespace ElaApi.Model
         public int TotalPoints { get; set; }
 
         public int CurrentPoints { get; set; }
+
+        public int ActivityMeter { get; set; }
     }
 }
