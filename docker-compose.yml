@@ -5,6 +5,7 @@ services:
     build: .
     image: elaapi
     container_name: ela-api
+    restart: unless-stopped
     environment:
       VIRTUAL_HOST: api.vllirette.com
       ASPNETCORE_ENVIRONMENT: Development
